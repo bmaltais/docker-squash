@@ -1,9 +1,8 @@
-FROM golang:1.4
+FROM debian:jessie
+ENV VERSION=v0.1.0
+ADD https://github.com/jwilder/docker-squash/releases/download/$VERSION/docker-squash-linux-amd64-$VERSION.tar.gz /root/docker-squash-linux-amd64-$VERSION.tar.gz
+RUN tar -C /usr/local/bin -xvzf /root/docker-squash-linux-amd64-$VERSION.tar.gz
 
-RUN apt-get update
-RUN apt-get -y install sudo
-
-COPY . /go/src/github.com/jwilder/docker-squash
-RUN go get github.com/jwilder/docker-squash
+RUN apt-get update && apt-get install -y sudo
 
 ENTRYPOINT ["docker-squash"]
