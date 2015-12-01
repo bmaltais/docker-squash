@@ -15,7 +15,7 @@ So if before you had:
 Now you'll have:
 
     $ docker save <image id> > input/image.tar
-    $ docker run -v $(pwd)/input/image.tar -v $(pwd)/output:/output -v /tmp -i myyk/docker-squash -i input/image.tar -o output/squashed.tar
+    $ docker run -v $(pwd)/input:/input -v $(pwd)/output:/output -v /tmp -i myyk/docker-squash -i input/image.tar -o output/squashed.tar
     $ cat output/squashed.tar | docker load
     $ docker images <new image id>
 
