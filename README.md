@@ -9,6 +9,7 @@ So if before you had:
 
     $ docker save <image id> > image.tar
     $ sudo docker-squash -i image.tar -o squashed.tar
+    $ tar --delete -f squashed.tar manifest.json
     $ cat squashed.tar | docker load
 
 Now you'll have:
