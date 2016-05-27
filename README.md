@@ -3,7 +3,7 @@ docker-squash
 
 This works exactly like the native version of `docker-squash` so familiarize yourself with it's docs at https://github.com/jwilder/docker-squash.
 
-The main difference is you'll need to swap out the `sudo docker-squash` command for `docker run -v /tmp -i myyk/docker-squash` and optionally add volumes for you inputs/outputs.
+The main difference is you'll need to swap out the `sudo docker-squash` command for `docker run -v /tmp -i bmaltais/squash` and optionally add volumes for you inputs/outputs.
 
 So if before you had:
 
@@ -14,7 +14,7 @@ So if before you had:
 
 Now you'll have:
 
-    $ alias squash="docker run -v $(pwd)/input:/input -v $(pwd)/output:/output -v /tmp -i squash:1st"
+    $ alias squash="docker run -v $(pwd)/input:/input -v $(pwd)/output:/output -v /tmp -i bmaltais/squash"
     $ docker save <image id> > input/image.tar
     $ squash docker-squash -i /input/image.tar -o /output/squashed.tar -verbose
     $ squash tar --delete -f output/squashed.tar manifest.json
