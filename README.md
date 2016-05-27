@@ -14,7 +14,7 @@ So if before you had:
 
 Now you'll have:
 
-    $ alias squash="docker run -v $(pwd)/input:/input -v $(pwd)/output:/output -v /tmp -i bmaltais/squash"
+    $ alias squash="docker run --rm -v $(pwd)/input:/input -v $(pwd)/output:/output -v /tmp -i bmaltais/squash"
     $ docker save <image id> > input/image.tar
     $ squash docker-squash -i /input/image.tar -o /output/squashed.tar -verbose
     $ squash tar --delete -f output/squashed.tar manifest.json
