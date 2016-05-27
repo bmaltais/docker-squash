@@ -12,6 +12,7 @@ So if before you had:
     $ cat squashed.tar | docker load
 
 Now you'll have:
+
     $ alias squash="docker run -v $(pwd)/input:/input -v $(pwd)/output:/output -v /tmp -i squash:1st"
     $ docker save <image id> > input/image.tar
     $ squash docker-squash -i /input/image.tar -o /output/squashed.tar -verbose
